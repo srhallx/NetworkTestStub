@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkTest", "NetworkTest\NetworkTest.csproj", "{EF9F66D6-BB91-415C-9F84-FA4CE0103C77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF9F66D6-BB91-415C-9F84-FA4CE0103C77}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{EF9F66D6-BB91-415C-9F84-FA4CE0103C77}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{EF9F66D6-BB91-415C-9F84-FA4CE0103C77}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{EF9F66D6-BB91-415C-9F84-FA4CE0103C77}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{EF9F66D6-BB91-415C-9F84-FA4CE0103C77}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{EF9F66D6-BB91-415C-9F84-FA4CE0103C77}.Debug|iPhone.Build.0 = Debug|iPhone
+		{EF9F66D6-BB91-415C-9F84-FA4CE0103C77}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{EF9F66D6-BB91-415C-9F84-FA4CE0103C77}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{EF9F66D6-BB91-415C-9F84-FA4CE0103C77}.Release|iPhone.ActiveCfg = Release|iPhone
+		{EF9F66D6-BB91-415C-9F84-FA4CE0103C77}.Release|iPhone.Build.0 = Release|iPhone
+		{EF9F66D6-BB91-415C-9F84-FA4CE0103C77}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{EF9F66D6-BB91-415C-9F84-FA4CE0103C77}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+EndGlobal
