@@ -50,8 +50,8 @@
                                     <action selector="btnModernHttpClient_TouchUpInside:" destination="vXZ-lx-hvc" id="16" eventType="touchUpInside"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="11" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="20" y="164" width="335" height="483"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="11" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="20" y="199" width="335" height="448"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -60,12 +60,22 @@
                                     <constraint id="42" firstAttribute="height" constant="384"/>
                                 </constraints>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="71" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="161" width="136" height="30"/>
+                                <state key="normal" title="NSURLConnection">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnHttpClient_TouchUpInside:" destination="73" id="72" eventType="touchUpInside"/>
+                                    <action selector="btnNSURLConnection_TouchUpInside:" destination="vXZ-lx-hvc" id="78" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint id="47" constant="20" firstItem="kh9-bI-dsS" firstAttribute="trailing" secondItem="11" secondAttribute="trailing"/>
                             <constraint id="48" constant="20" firstItem="kh9-bI-dsS" firstAttribute="bottom" secondItem="11" secondAttribute="bottom"/>
                             <constraint firstItem="11" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="49"/>
-                            <constraint firstItem="11" firstAttribute="top" secondItem="3" secondAttribute="bottom" constant="144" id="59"/>
+                            <constraint firstItem="11" firstAttribute="top" secondItem="3" secondAttribute="bottom" constant="180" id="59"/>
                             <constraint id="64" constant="20" firstItem="6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading"/>
                             <constraint id="65" constant="77" firstItem="6" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top"/>
                             <constraint firstItem="kh9-bI-dsS" firstAttribute="trailing" secondItem="6" secondAttribute="trailing" constant="75" id="67"/>
@@ -76,6 +86,7 @@
                         <outlet property="btnHttpClient" destination="7" id="name-outlet-7"/>
                         <outlet property="btnModernHttpClient" destination="8" id="name-outlet-8"/>
                         <outlet property="URLTextBox" destination="6" id="name-outlet-6"/>
+                        <outlet property="btnNSURLConnection" destination="71" id="name-outlet-71"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

@@ -64,6 +64,10 @@ namespace NetworkTest
 			base.ViewDidDisappear (animated);
 		}
 			
+
+		//
+		// Button press event handlers
+		//
 		partial void btnHttpClient_TouchUpInside (UIButton sender)
 		{
 			Settings.StoreURI(URLTextBox.Text);
@@ -78,6 +82,39 @@ namespace NetworkTest
 			ResultsTextView.Text = RetrieveURL(URLTextBox.Text, true);
 		}	
 
+		partial void btnNSURLConnection_TouchUpInside (UIButton sender)
+		{
+			Settings.StoreURI(URLTextBox.Text);
+
+			NSMutableUrlRequest request = new NSMutableUrlRequest(new NSUrl(URLTextBox.Text));
+			request.HttpMethod = "GET";
+			request.ShouldHandleCookies = false;
+
+			//Add Headers
+			NSMutableDictionary header = new NSMutableDictionary();
+			header.Add(NSObject.FromObject("content-type"), NSObject.FromObject("text/xml"));
+
+			request.Headers = header;
+
+			URLConnDelegate connectionDelegate = new URLConnDelegate ();
+			NSUrlConnection connection = new NSUrlConnection (request, connectionDelegate, true);
+
+			connectionDelegate.Finished += (object sdr, EventArgs e) => {
+				ResultsTextView.Text = connectionDelegate.Response;
+			};
+
+			connection.Start();
+
+		}
+			
+
+
+		/// <summary>
+		/// Retrieves the URL
+		/// </summary>
+		/// <returns>String of response data and headers.</returns>
+		/// <param name="url">URL</param>
+		/// <param name="useModernHttpClient">If set to <c>true</c> use modern http client.</param>
 		public string RetrieveURL(string url, bool useModernHttpClient)
 		{
 			
@@ -105,11 +142,43 @@ namespace NetworkTest
 			return headers + "HTTP (" + msg.StatusCode.ToString() + ")\n" + finalMsg.Result;
 
 		}
-
-
+		
 		#endregion
 
 
+	}
+
+	public class URLConnDelegate : NSUrlConnectionDataDelegate
+	{
+
+		public string Response { get; set; }
+		public event EventHandler Finished;
+
+		public override void  ReceivedResponse (NSUrlConnection connection, NSUrlResponse response)
+		{
+			NSHttpUrlResponse httpResponse = response as NSHttpUrlResponse;
+
+			string data = null;
+
+			foreach (var s in httpResponse.AllHeaderFields) {
+				data += s.Key + ":" + s.Value + "\n";
+			}
+
+			data += "HTTP (" + httpResponse.StatusCode.ToString () + ")\n";
+			Response = data;
+
+		}
+
+		public override void ReceivedData (NSUrlConnection connection, NSData data)
+		{
+			Response += data.ToString ();
+		}
+			
+		public override void FinishedLoading (NSUrlConnection connection)
+		{
+			if (Finished != null)
+				Finished (this, new EventArgs ());
+		}
 	}
 }
 

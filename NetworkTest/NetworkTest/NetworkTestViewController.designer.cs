@@ -24,6 +24,10 @@ namespace NetworkTest
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton btnNSURLConnection { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextView ResultsTextView { get; set; }
 
 		[Outlet]
@@ -38,6 +42,10 @@ namespace NetworkTest
 		[GeneratedCode ("iOS Designer", "1.0")]
 		partial void btnModernHttpClient_TouchUpInside (UIButton sender);
 
+		[Action ("btnNSURLConnection_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void btnNSURLConnection_TouchUpInside (UIButton sender);
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (btnHttpClient != null) {
@@ -47,6 +55,10 @@ namespace NetworkTest
 			if (btnModernHttpClient != null) {
 				btnModernHttpClient.Dispose ();
 				btnModernHttpClient = null;
+			}
+			if (btnNSURLConnection != null) {
+				btnNSURLConnection.Dispose ();
+				btnNSURLConnection = null;
 			}
 			if (ResultsTextView != null) {
 				ResultsTextView.Dispose ();
